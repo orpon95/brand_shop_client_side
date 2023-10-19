@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Apple",
+      "image_url": "https://i.ibb.co/NyXL6hC/download.jpg"
+    },
+    {
+      "name": "Google",
+      "image_url": "https://i.ibb.co/MsDS2R1/google-g-logo-on-black-fza03id05dmw3jap.jpg"
+    },
+    {
+      "name": "Xiaomi",
+      "image_url": "https://i.ibb.co/wCRWytj/download-2.jpg"
+    },
+    {
+      "name": "Samsung",
+      "image_url": "https://i.ibb.co/8Nqgt8C/images.jpg"
+    },
+    {
+      "name": "OnePlus",
+      "image_url": "https://i.ibb.co/JCcV7mm/6d8d0699346429-5ef0f0d2cb19b.png"
+    },
+    {
+      "name": "Huawei",
+      "image_url": "https://i.ibb.co/DrbgC6p/download-1.jpg"
+    }
+  ]

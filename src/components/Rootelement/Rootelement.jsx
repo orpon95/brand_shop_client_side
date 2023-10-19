@@ -1,17 +1,17 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import NavBar from '../NavBar/NavBar';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 
-const Root = () => {
+const Rootelement = () => {
     return (
-        <div>
+        <div className='font-poppins w-full md:w-[80%] mx-auto p-5 md:p-8 lg:p-14' >
             <NavBar></NavBar>
             <Outlet></Outlet>
             <Footer></Footer>
+            
         </div>
     );
 };
 
-export default Root;
+export default Rootelement;

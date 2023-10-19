@@ -1,28 +1,51 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+
+import Home from './components/Home/Home';
+
+
+
+
 import './index.css'
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Root from './components/Root/Root.jsx';
-import Home from './components/Home/Home.jsx';
+import MyCart from './components/myCart/myCart';
+import LogIn from './components/logIn/logIn';
+import AddProduct from './components/addProduct/addProduct';
+import Rootelement from './components/Rootelement/Rootelement';
+
+
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root></Root>,
+    element: <Rootelement></Rootelement> ,
     children:[
-     {
-      path: "/",
-      element: <Home></Home>
-     }
 
+      {
 
-
+        path:"/",
+        element: <Home></Home>,
+        loader: ()=>fetch('/data.json')
+      },
+      {
+        path:"/myCart",
+        element: <MyCart></MyCart>
+      },
+      {
+        path: "/Login",
+        element: <LogIn></LogIn>
+      },
+      {
+        path: "/Addproduct",
+        element: <AddProduct></AddProduct>
+      }
     ]
+    
   },
 ]);
 
