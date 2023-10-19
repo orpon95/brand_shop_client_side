@@ -16,6 +16,7 @@ import MyCart from './components/myCart/myCart';
 import LogIn from './components/logIn/logIn';
 import AddProduct from './components/addProduct/addProduct';
 import Rootelement from './components/Rootelement/Rootelement';
+import Productcard from './components/Productcard/Productcard';
 
 
 
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
       {
         path: "/Addproduct",
         element: <AddProduct></AddProduct>
+      },
+      {
+        path:"/ProductCard/:brandname",
+        element: <Productcard></Productcard>,
+        loader: ()=>fetch("http://localhost:5000/add")
       }
     ]
     

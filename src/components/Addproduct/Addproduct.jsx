@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Swal from 'sweetalert2'
 
 const AddProduct = () => {
+    const [rating , setRatting] = useState(0)
+
+    const handleRating = (newRatiing)=>{
+        setRatting(newRatiing)
+    }
 
     const handleAdd = e => {
         e.preventDefault();
@@ -12,7 +17,7 @@ const AddProduct = () => {
         const type = form.type.value;
         const price = form.price.value;
         const short_description = form.short_description.value;
-        const rating_2 = form.rating_2.value;
+        const rating_2 = rating;
 
         // console.log(image,name,brandName,type,price,short_description,rating_2);
         const newProduct = {
@@ -108,11 +113,11 @@ const AddProduct = () => {
                 {/* rating */}
                 <label htmlFor="rating">rating</label>
                 <div className="rating">
-                    <input type="radio" name="rating_2" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating_2" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating_2" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating_2" className="mask mask-star-2 bg-orange-400" />
-                    <input type="radio" name="rating_2" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" onClick={()=>handleRating(1)} name="rating_2" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" onClick={()=>handleRating(2)} name="rating_2" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" onClick={()=>handleRating(3)} name="rating_2" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" onClick={()=>handleRating(4)} name="rating_2" className="mask mask-star-2 bg-orange-400" />
+                    <input type="radio" onClick={()=>handleRating(5)} name="rating_2" className="mask mask-star-2 bg-orange-400" />
                 </div>
 
                 <div>
