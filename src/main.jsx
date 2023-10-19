@@ -17,6 +17,7 @@ import LogIn from './components/logIn/logIn';
 import AddProduct from './components/addProduct/addProduct';
 import Rootelement from './components/Rootelement/Rootelement';
 import Productcard from './components/Productcard/Productcard';
+import Details from './components/Details/Details';
 
 
 
@@ -35,7 +36,8 @@ const router = createBrowserRouter([
       },
       {
         path:"/myCart",
-        element: <MyCart></MyCart>
+        element: <MyCart></MyCart>,
+        loader: ()=>fetch("http://localhost:5000/cart")
       },
       {
         path: "/Login",
@@ -48,6 +50,11 @@ const router = createBrowserRouter([
       {
         path:"/ProductCard/:brandname",
         element: <Productcard></Productcard>,
+        loader: ()=>fetch("http://localhost:5000/add")
+      },
+      {
+        path: "/Details/:id",
+        element:<Details></Details>,
         loader: ()=>fetch("http://localhost:5000/add")
       }
     ]
