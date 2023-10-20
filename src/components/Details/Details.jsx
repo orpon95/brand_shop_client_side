@@ -62,7 +62,7 @@ const Details = () => {
 
 
             <div className='flex justify-center'>
-                <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card w-96 border-2 border-cyan-300 shadow-xl">
                     <figure><img src={image} alt="Shoes" /></figure>
                     <div className="card-body">
 
@@ -70,7 +70,7 @@ const Details = () => {
                         <h1> Price: <span className='text-red-500'>{price}$</span> </h1>
                         <h1 className='italic text-2xl font-extrabold'>  {short_description} </h1>
                         <div className="card-actions justify-center">
-                            <button onClick={handleCart} className="btn btn-secondary">Add to cart</button>
+                            <button onClick={handleCart} className="btn btn-ghost border-2 border-cyan-300">Add to cart</button>
                         </div>
                     </div>
                 </div>

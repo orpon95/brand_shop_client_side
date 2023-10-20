@@ -13,7 +13,7 @@ const PrivateRout = ({children}) => {
         return <span className="loading loading-spinner loading-lg mx-auto"></span>
     }
     // return <Navigate state={location.pathname} to={"/Login"} ></Navigate>
-    <Navigate state={location.pathname} to={"/Login"}  ></Navigate>
+   return <Navigate state={location.pathname} to={"/Login"}  ></Navigate>
 };
 
 export default PrivateRout;

@@ -67,12 +67,12 @@ const LogIn = () => {
         <div>
            
 
-            <h1 className="text-5xl font-bold text-center">Log In here!!!</h1>
-            <div className="hero min-h-screen bg-base-200">
+            <h1 className="text-5xl font-bold text-center my-5">Log In here!!!</h1>
+            <div className="hero min-h-screen ">
 
                 <div className="hero-content ">
 
-                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
                         <form onSubmit={handleLogin}  className="card-body">
 
                            
