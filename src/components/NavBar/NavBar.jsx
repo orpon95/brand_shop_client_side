@@ -2,42 +2,69 @@
 import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { Authcontext } from '../AuthProvider/AuthProvider';
+import "./NavBar.css"
 
 const activeLinkStyle = {
     color: 'red',
 }
 
-const NavBar = () => {
-    const { user,logOut,googlesign } = useContext(Authcontext)
-    const [loggedinUser ,setLoggedInUser] = useState('')
+const NavBar = ({tData}) => {
+    
+    const { user, logOut, googlesign } = useContext(Authcontext)
+    const [loggedinUser, setLoggedInUser] = useState('')
     console.log(user);
     // logout
-    const handleSignOut = ()=>{
+    const handleSignOut = () => {
         logOut()
-        .then(()=>{
-            setLoggedInUser('')
+            .then(() => {
+                setLoggedInUser('')
 
-        })
-        .catch(err => console.log(err))
+            })
+            .catch(err => console.log(err))
     }
 
     // googlesign
-    const handleGoogle = ()=>{
+    const handleGoogle = () => {
         googlesign()
-        .then(result =>{
-            setLoggedInUser(result.user)
-        })
-        .catch(err =>{
-            console.log(err)
-        })
+            .then(result => {
+                setLoggedInUser(result.user)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+
+
 
     }
+
+
+
+    // toggle
+
+    // const [darkMode, setDarkMode] = useState()
+    const [darkMode, setDarkMode] = useState()
+
+    const toggleDarkMode = () => {
+        setDarkMode(!darkMode);
+        // You can save the user's preference in local storage or a state management system.
+    };
+    tData(darkMode)
     return (
         <div className='flex justify-center gap-4 items-center flex-col border-2 border-cyan-400 rounded-lg'>
             <div className="navbar  rounded-lg  flex-1   justify-center  ">
                 <img className='w-[50px] h-[50px] rounded-full' src="https://i.ibb.co/9pn7svT/4k-tech-0agxdfta55vf3gym.jpg" alt="" />
                 <a className="btn btn-ghost italic  normal-case text-xl font-poppins">Tech-city</a>
             </div>
+
+            {/* toogle button start */}
+            <label className="switch">
+                <input type="checkbox" onChange={toggleDarkMode} checked={darkMode} />
+                <span className="slider round"></span>
+            </label>
+
+
+            {/* toggle button end */}
 
             <div className=' flex justify-center flex-wrap  space-x-1 md:space-x-4  flex-1 my-5 lg:my-0'>
                 <NavLink to={"/"} activeStyle={activeLinkStyle}  > <button className='btn btn-ghost underline' >HOME</button> </NavLink>
@@ -64,16 +91,16 @@ const NavBar = () => {
                     </div>
                 }
                 {
-                        loggedinUser&& <div>
-                            <h1 className='underline p-2 rounded-lg font-bold flex items-center '>
-                                {/* <span> <img src={loggedinUser.photoURL} alt="" /></span> */}
-                                <p><img className='w-3/6 rounded-full' src={loggedinUser.photoURL} alt="" /></p>
+                    loggedinUser && <div>
+                        <h1 className='underline p-2 rounded-lg font-bold flex items-center '>
+                            {/* <span> <img src={loggedinUser.photoURL} alt="" /></span> */}
+                            <p><img className='w-3/6 rounded-full' src={loggedinUser.photoURL} alt="" /></p>
 
-                              {loggedinUser.displayName}
-                            </h1>
-                            {/* <p> pic : <img src={loggedinUser.photoURL} alt="" /> </p> */}
-                        </div>
-                    }
+                            {loggedinUser.displayName}
+                        </h1>
+                        {/* <p> pic : <img src={loggedinUser.photoURL} alt="" /> </p> */}
+                    </div>
+                }
 
 
 

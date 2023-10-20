@@ -22,6 +22,7 @@ import Update from './components/Update/Update';
 import Register from './components/Register/Register';
 import AuthProvider from './components/AuthProvider/AuthProvider';
 import PrivateRout from './components/PrivateRout/PrivateRout';
+import Error from './components/Error/Error';
 
 
 
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Rootelement></Rootelement>,
+    errorElement: <Error></Error>,
     children: [
 
       {

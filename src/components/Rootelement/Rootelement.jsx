@@ -1,19 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from '../NavBar/NavBar';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Footer/Footer';
+import "./Rootelement.css"
 
 const Rootelement = () => {
-    const divStyle = {
-        backgroundImage: 'url("https://i.ibb.co/XCKDZsk/blurry-gradient-haikei.png")',
-        backgroundSize: 'cover', // You can set other background properties as well
-    };
-    return (
-        <div style={divStyle} className='font-poppins w-full md:w-[80%] mx-auto p-5 md:p-8 lg:p-14' >
-            <NavBar></NavBar>
-            <Outlet></Outlet>
-            <Footer></Footer>
 
+    const [toggleData, setToggleData] = useState('')
+    console.log(toggleData);
+
+    const toggleFunc = (tData) => {
+        setToggleData(tData)
+    }
+
+
+
+    // const divStyle = {
+    //     backgroundImage: 'url("https://i.ibb.co/XCKDZsk/blurry-gradient-haikei.png")',
+    //     backgroundSize: 'cover', 
+    // };
+    
+    return (
+        <div className={toggleData ? "dark-theme" : "light-theme"}>
+            <div  className='font-poppins w-full md:w-[80%] mx-auto p-5 md:p-8 lg:p-14' >
+                <NavBar tData={toggleFunc} ></NavBar>
+                <Outlet></Outlet>
+                <Footer></Footer>
+
+            </div>
         </div>
     );
 };
