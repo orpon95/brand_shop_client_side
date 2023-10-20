@@ -18,6 +18,7 @@ import AddProduct from './components/addProduct/addProduct';
 import Rootelement from './components/Rootelement/Rootelement';
 import Productcard from './components/Productcard/Productcard';
 import Details from './components/Details/Details';
+import Update from './components/Update/Update';
 
 
 
@@ -25,19 +26,19 @@ import Details from './components/Details/Details';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Rootelement></Rootelement> ,
-    children:[
+    element: <Rootelement></Rootelement>,
+    children: [
 
       {
 
-        path:"/",
+        path: "/",
         element: <Home></Home>,
-        loader: ()=>fetch('/data.json')
+        loader: () => fetch('/data.json')
       },
       {
-        path:"/myCart",
+        path: "/myCart",
         element: <MyCart></MyCart>,
-        loader: ()=>fetch("http://localhost:5000/cart")
+        loader: () => fetch("http://localhost:5000/cart")
       },
       {
         path: "/Login",
@@ -48,17 +49,22 @@ const router = createBrowserRouter([
         element: <AddProduct></AddProduct>
       },
       {
-        path:"/ProductCard/:brandname",
+        path: "/ProductCard/:brandname",
         element: <Productcard></Productcard>,
-        loader: ()=>fetch("http://localhost:5000/add")
+        loader: () => fetch("http://localhost:5000/add")
       },
       {
         path: "/Details/:id",
-        element:<Details></Details>,
-        loader: ()=>fetch("http://localhost:5000/add")
+        element: <Details></Details>,
+        loader: () => fetch("http://localhost:5000/add")
+      },
+      {
+        path: "/Update/:id",
+        element:<Update></Update>,
+        loader:({params})=>fetch(`http://localhost:5000/add/${params.id}`)
       }
     ]
-    
+
   },
 ]);
 

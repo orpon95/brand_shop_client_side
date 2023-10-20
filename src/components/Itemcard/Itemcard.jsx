@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 
 const Itemcard = ({data}) => {
@@ -18,7 +18,8 @@ const Itemcard = ({data}) => {
                     <h1 className='text-lg font-bold'> <span className='text-red-600'>{price}$</span> </h1>
                     <h1 className='text-lg font-bold'> Rating: {rating_2}<span className='font-extrabold text-orange-400 text-2xl'>*</span> </h1>
                     <Link   to={`/Details/${_id}`}><button className='btn'> Details</button></Link>
-                    <button className='btn'>Update</button>
+                    
+                    <NavLink to={`/Update/${_id}`}><button className='btn'>Update</button></NavLink>
                     
                 </div>
             </div>
