@@ -5,4 +5,4 @@
 - user can see product according to brand name
 - user add their choice product in my cart page
 - user can delete product from my cart 
-- wesites live link: https://brand-shop-auth-f09b5.web.app/
+- wesites live link: https://65334dc0307ae25e8bc85029--chimerical-nougat-2e0911.netlify.app/
