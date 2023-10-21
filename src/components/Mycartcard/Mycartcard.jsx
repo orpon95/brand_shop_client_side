@@ -23,7 +23,7 @@ const Mycartcard = ({ cartdata,setLoadedUsers,loadedUsers }) => {
                 //     'Your file has been deleted.',
                 //     'success'
                 // )
-                fetch(`http://localhost:5000/cart/${id}`,{
+                fetch(`https://brand-shop-844bnpgxw-yeasins-projects-c520e666.vercel.app/cart/${id}`,{
                     method: "DELETE"
 
                 })

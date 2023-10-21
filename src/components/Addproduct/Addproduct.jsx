@@ -25,7 +25,7 @@ const AddProduct = () => {
         }
         console.log(newProduct);
         // post api
-        fetch("http://localhost:5000/add", {
+        fetch("https://brand-shop-844bnpgxw-yeasins-projects-c520e666.vercel.app/add", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

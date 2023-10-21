@@ -19,7 +19,7 @@ const Details = () => {
 
     const handleCart = () => {
 
-        fetch("http://localhost:5000/cart", {
+        fetch("https://brand-shop-844bnpgxw-yeasins-projects-c520e666.vercel.app/cart", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

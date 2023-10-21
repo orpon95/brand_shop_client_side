@@ -43,7 +43,7 @@ const router = createBrowserRouter([
       {
         path: "/myCart",
         element: <PrivateRout><MyCart></MyCart></PrivateRout>,
-        loader: () => fetch("http://localhost:5000/cart")
+        loader: () => fetch("https://brand-shop-844bnpgxw-yeasins-projects-c520e666.vercel.app/cart")
       },
       {
         path: "/Login",
@@ -56,17 +56,17 @@ const router = createBrowserRouter([
       {
         path: "/ProductCard/:brandname",
         element: <Productcard></Productcard>,
-        loader: () => fetch("http://localhost:5000/add")
+        loader: () => fetch("https://brand-shop-844bnpgxw-yeasins-projects-c520e666.vercel.app/add")
       },
       {
         path: "/Details/:id",
         element: <PrivateRout><Details></Details></PrivateRout>,
-        loader: () => fetch("http://localhost:5000/add")
+        loader: () => fetch("https://brand-shop-844bnpgxw-yeasins-projects-c520e666.vercel.app/add")
       },
       {
         path: "/Update/:id",
         element: <PrivateRout><Update></Update></PrivateRout>,
-        loader: ({ params }) => fetch(`http://localhost:5000/add/${params.id}`)
+        loader: ({ params }) => fetch(`https://brand-shop-844bnpgxw-yeasins-projects-c520e666.vercel.app/add/${params.id}`)
       },
       {
         path: "/Register",

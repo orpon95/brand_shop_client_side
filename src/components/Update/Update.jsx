@@ -31,7 +31,7 @@ const Update = () => {
         }
         console.log(updatedProduct);
         // post api
-        fetch(`http://localhost:5000/add/${_id}`, {
+        fetch(`https://brand-shop-844bnpgxw-yeasins-projects-c520e666.vercel.app/add/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

@@ -15,10 +15,7 @@ const Rootelement = () => {
 
 
 
-    // const divStyle = {
-    //     backgroundImage: 'url("https://i.ibb.co/XCKDZsk/blurry-gradient-haikei.png")',
-    //     backgroundSize: 'cover', 
-    // };
+    
     
     return (
         <div className={toggleData ? "dark-theme" : "light-theme"}>
